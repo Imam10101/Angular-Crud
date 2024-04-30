@@ -1,0 +1,68 @@
+<div>
+    <div class="submit-form">
+      @if (!submitted) {
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="employee.Name"
+            name="name"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="employee.Email"
+            name="email"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="mobile"
+            required
+            [(ngModel)]="employee.Mobile"
+            name="mobile"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input
+            type="date"
+            class="form-control"
+            id="birthday"
+            [(ngModel)]="employee.Birthday"
+            name="birthday"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="joinDate">Join Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="joinDate"
+            [(ngModel)]="employee.JoinDate"
+            name="joinDate"
+          />
+        </div>
+  
+        <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+      } @else {
+      <h4>Employee was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newEmployee()">Add</button>
+      }
+    </div>
+  </div>

@@ -1,0 +1,100 @@
+@if (viewMode){
+  @if (currentEmployee.Id){
+      <h4>Employee</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentEmployee.Name }}
+      </div>
+      <div>
+        <label><strong>Email:</strong></label>
+        {{ currentEmployee.Email }}
+      </div>
+      <div>
+        <label><strong>Mobile:</strong></label>
+        {{ currentEmployee.Mobile }}
+      </div>
+      <div>
+        <label><strong>Birthday:</strong></label>
+        {{ currentEmployee.Birthday  }}
+      </div>
+      <div>
+        <label><strong>Join Date:</strong></label>
+        {{ currentEmployee.JoinDate  }}
+      </div>
+  
+      <a class="badge badge-warning" routerLink="/employees/{{ currentEmployee.Id }}">
+        Edit
+      </a>
+    } @else {<p>Please click on a Tutorial...</p>}
+  } @else {
+    @if (currentEmployee.Id) {
+    <div class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentEmployee.Name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            [(ngModel)]="currentEmployee.Email"
+            name="email"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mobile"
+            [(ngModel)]="currentEmployee.Mobile"
+            name="mobile"
+          />
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input
+            type="text"
+            class="form-control"
+            id="birthday"
+            [(ngModel)]="currentEmployee.Birthday"
+            name="birthday"
+          />
+        </div>
+        <div class="form-group">
+          <label for="joinDate">JoinDate</label>
+          <input
+            type="text"
+            class="form-control"
+            id="joinDate"
+            [(ngModel)]="currentEmployee.JoinDate"
+            name="joinDate"
+          />
+        </div>
+      </form>
+
+  
+      <button class="badge badge-danger mr-2" (click)="deleteEmployee()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="deleteEmployee()">
+        Update
+      </button>
+      <p>{{ message }}</p>
+      </div>
+    } @else {<p>Cannot access this Tutorial...</p>}
+  }
